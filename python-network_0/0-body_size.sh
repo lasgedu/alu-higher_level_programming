@@ -1,3 +1,3 @@
 #!/bin/bash
-#Send request and get the size of the response body in bytes
-curl -sI "$1" | grep 'Content-Length:' | cut -f2 -d' '
+# Send the request using curl, and output the size of the response body in bytes
+curl -sI "$1" | grep -i Content-Length | awk '{print $2}'
